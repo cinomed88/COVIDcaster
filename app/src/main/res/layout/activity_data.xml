@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    tools:context=".Data">
+
+    <Spinner
+        android:id="@+id/spinner"
+        style="@style/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/buttonColor"
+        android:entries="@array/monthsList"
+        />
+
+    <TextView
+        android:id="@+id/totalCasesLabel"
+
+        style="@style/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/totalCases"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/numberOfCases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/numberOfCases"
+        android:textColor="@color/whiteColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/recoveredLabel"
+            style="@style/RecoveredAndDeathLabels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recoveredLabel"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/deathLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/deathsLabel"
+            style="@style/RecoveredAndDeathLabels" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/recoverNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/recoveredAndDeathsNumbers"
+            android:text="@string/numberOfCases" />
+
+        <TextView
+            android:id="@+id/deathNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/recoveredAndDeathsNumbers"
+            android:text="@string/numberOfCases" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/statisticsList"
+        style="@style/ListFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/buttonColor"
+        android:entries="@array/statisticsList" />
+
+</LinearLayout>

@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">COVIDCaster</string>
+    <string name="totalCases">Total Cases</string>
+    <string name="numberOfCases">123,456,789</string>
+    <string name="recoveredLabel">Recovered</string>
+    <string name="deathsLabel">Deaths</string>
+    <string-array name="monthsList">
+        <item>April 2020</item>
+        <item>May 2020</item>
+        <item>June 2020</item>
+        <item>July 2020</item>
+        <item>Aug 2020</item>
+        <item>Sep 2020</item>
+        <item>Oct 2020</item>
+    </string-array>
+    <string-array name="statisticsList">
+        <item>Active Cases</item>
+        <item>Hospitalized</item>
+        <item>ICU</item>
+        <item>Age</item>
+        <item>TAT</item>
+    </string-array>
+
 </resources>

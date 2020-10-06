@@ -6,5 +6,28 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="titleText">
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="ListFont" parent="@android:style/Widget.ListView">
+        <item name="android:textColor">@color/buttonColor</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="RecoveredAndDeathLabels">
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="recoveredAndDeathsNumbers">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/whiteColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
