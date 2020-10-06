@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/regional_data_layout"
+    tools:context=".RegionalDataActivity">
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/map_placeholder" />
+
+    <Button
+        android:id="@+id/region1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Van. Coastal" />
+
+    <Button
+        android:id="@+id/region2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fraser Valley" />
+
+    <Button
+        android:id="@+id/region3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Interior" />
+
+    <Button
+        android:id="@+id/region4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Out of Canada" />
+
+</LinearLayout>

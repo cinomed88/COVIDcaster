@@ -11,4 +11,9 @@ public class Data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
     }
+
+    public static final String[] regions = {
+            "Fraser Valley", "Van. Coastal", "Interior", "Northern", "Van. Island", "Out of Canada"
+    };
+
 }

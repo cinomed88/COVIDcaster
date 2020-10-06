@@ -20,4 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
+    public void OnClickRegionalData(View v) {
+        Intent intent = new Intent(MainActivity.this, RegionalDataActivity.class);
+        startActivity(intent);
+    }
+
 }

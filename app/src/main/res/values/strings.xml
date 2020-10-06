@@ -6,7 +6,7 @@
     <string name="board">LIVE BOARD</string>
     <string name="lastUpdate">Last Update: </string>
     <string name="tempUpdateDate">Nov. 05, 10:00, 2020</string>
-<!--     <string name="totalCases">Total Cases</string> -->
+    <!--     <string name="totalCases">Total Cases</string> -->
     <string name="totalCasesNum">9,739</string>
 
     <string name="activeCases">Active Cases</string>
@@ -18,11 +18,7 @@
     <string name="hospitalized">hospitalized</string>
 
 
-
-
-
     <!--    Lucas uses   -->
-
 
 
     <string name="totalCases">Total Cases</string>
@@ -46,5 +42,8 @@
         <item>TAT</item>
     </string-array>
 
+    <!-- Lambert uses -->
+
+    <string name="test_regional_data">Regional Data</string>
 
 </resources>
