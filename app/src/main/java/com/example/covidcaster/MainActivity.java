@@ -17,8 +17,4 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onDataClick(View v) {
-        Intent i = new Intent(MainActivity.this, DataActivity.class);
-        startActivity(i);
-    }
 }
