@@ -338,18 +338,35 @@
             </LinearLayout>
 
         </GridLayout>
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/test_regional_data"
-            android:onClick="OnClickRegionalData"
-            />
-    </LinearLayout>
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:onClick="OnClickRegionalData"
+                android:text="@string/test_regional_data" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:onClick="onDataClick"
+                android:text="@string/dataButton" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

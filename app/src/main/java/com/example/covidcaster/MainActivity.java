@@ -25,4 +25,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onDataClick(View v) {
+        Intent intent = new Intent(MainActivity.this, DataActivity.class);
+        startActivity(intent);
+    }
+
+
 }

@@ -20,11 +20,12 @@
 
     <!--    Lucas uses   -->
 
-
+    <!--    Vlad Uses-->
     <string name="totalCases">Total Cases</string>
     <string name="numberOfCases">123,456,789</string>
     <string name="recoveredLabel">Recovered</string>
     <string name="deathsLabel">Deaths</string>
+    <string name="dataButton">Data</string>
     <string-array name="monthsList">
         <item>April 2020</item>
         <item>May 2020</item>
@@ -41,6 +42,7 @@
         <item>Age</item>
         <item>TAT</item>
     </string-array>
+    <!--    Vlad Uses-->
 
     <!-- Lambert uses -->
 
