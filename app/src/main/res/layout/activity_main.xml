@@ -6,367 +6,393 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/main1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_main"
-        android:textStyle="bold"
-        android:textSize="12pt"
-        android:layout_marginTop="20sp"
-        android:layout_gravity="left"
-        android:textColor="#000000"
-        android:layout_marginLeft="30sp" />
-    <TextView
-        android:id="@+id/main2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="30sp"
-        android:text="@string/board"
-        android:textSize="12pt"
-        android:textColor="#000000"
-        android:textStyle="bold"/>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="left"
-        android:layout_marginLeft="30sp">
-
-        <TextView
-            android:id="@+id/lastUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/lastUpdate"
-            android:textSize="7pt"
-            android:layout_marginRight="5sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/updateDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/tempUpdateDate"
-            android:textSize="7pt"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-
-        <TextView
-            android:id="@+id/totalCases"
-            android:layout_marginTop="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/totalCases"
-            android:textColor="#000000"
-            android:textSize="9pt"/>
-        <TextView
-            android:id="@+id/totalCasesNum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/totalCasesNum"
-            android:textSize="30pt"
-            android:textColor="#000000"
-            android:textStyle="bold"/>
+        android:layout_height="wrap_content">
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/main1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:text="@string/app_main"
+            android:textStyle="bold"
+            android:textSize="12pt"
+            android:layout_marginTop="20sp"
+            android:layout_gravity="left"
+            android:textColor="#000000"
+            android:layout_marginLeft="30sp" />
+        <TextView
+            android:id="@+id/main2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30sp"
+            android:text="@string/board"
+            android:textSize="12pt"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
 
-            <ImageView
-                android:id="@+id/up"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/up_arrow1"
-                android:layout_gravity="center_vertical">
-
-            </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            android:layout_marginLeft="30sp">
 
             <TextView
-                android:id="@+id/newCasesNum"
+                android:id="@+id/lastUpdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="120"
-                android:textSize="15pt"
-                android:textColor="#FF0000"
+                android:text="@string/lastUpdate"
+                android:textSize="7pt"
+                android:layout_marginRight="5sp"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/updateDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/tempUpdateDate"
+                android:textSize="7pt"
+                android:textStyle="bold"/>
         </LinearLayout>
-    </LinearLayout>
 
-        <GridLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:columnCount="2"
-            android:rowCount="2">
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/totalCases"
+                android:layout_marginTop="30sp"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_marginRight="30dp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/activeCases"
-                    android:layout_marginTop="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/activeCases"
-                    android:textColor="#000000"
-                    android:textSize="7pt"/>
-                <TextView
-                    android:id="@+id/activeCasesNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/activeCasesNum"
-                    android:textSize="20pt"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/up2"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/up_arrow1"
-                        android:layout_gravity="center_vertical">
-                    </ImageView>
-
-                    <TextView
-                        android:id="@+id/newCasesIncrement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="96"
-                        android:textSize="15pt"
-                        android:textColor="#FF0000"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_row="0"
-                android:layout_marginLeft="30dp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/deaths"
-                    android:layout_marginTop="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/deaths"
-                    android:textColor="#000000"
-                    android:textSize="7pt"/>
-                <TextView
-                    android:id="@+id/DeathsNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/deathsNum"
-                    android:textSize="20pt"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/up3"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/up_arrow1"
-                        android:layout_gravity="center_vertical">
-
-                    </ImageView>
-
-                    <TextView
-                        android:id="@+id/deathsNumIncrement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="10"
-                        android:textSize="15pt"
-                        android:textColor="#FF0000"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_row="1"
-                android:layout_marginRight="30dp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/hospitalized"
-                    android:layout_marginTop="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/hospitalized"
-                    android:textColor="#000000"
-                    android:textSize="7pt"/>
-                <TextView
-                    android:id="@+id/hospitalizedNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="756"
-                    android:textSize="20pt"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/up4"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/up_arrow1"
-                        android:layout_gravity="center_vertical">
-
-                    </ImageView>
-
-                    <TextView
-                        android:id="@+id/hospitalizedNumIncrement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="57"
-                        android:textSize="15pt"
-                        android:textColor="#FF0000"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_row="1"
-                android:layout_marginLeft="30dp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/ICU"
-                    android:layout_marginTop="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/ICU"
-                    android:textColor="#000000"
-                    android:textSize="7pt"/>
-                <TextView
-                    android:id="@+id/ICUNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="38"
-                    android:textSize="20pt"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/up5"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/up_arrow1"
-                        android:layout_gravity="center_vertical">
-
-                    </ImageView>
-
-                    <TextView
-                        android:id="@+id/ICUNumIncrement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="6"
-                        android:textSize="15pt"
-                        android:textColor="#FF0000"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-        </GridLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="110dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:onClick="OnClickRegionalData"
-                android:text="@string/test_regional_data" />
+                android:layout_gravity="center"
+                android:text="@string/totalCases"
+                android:textColor="#000000"
+                android:textSize="9pt"/>
+            <TextView
+                android:id="@+id/totalCasesNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/totalCasesNum"
+                android:textSize="30pt"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/up"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/up_arrow1"
+                    android:layout_gravity="center_vertical">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/newCasesNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="120"
+                    android:textSize="15pt"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="110dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_width="210dp"
+            <GridLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="onDataClick"
-                android:text="@string/dataButton" />
+                android:layout_gravity="center"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/activeCases"
+                        android:layout_marginTop="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/activeCases"
+                        android:textColor="#000000"
+                        android:textSize="7pt"/>
+                    <TextView
+                        android:id="@+id/activeCasesNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/activeCasesNum"
+                        android:textSize="20pt"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/up2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/up_arrow1"
+                            android:layout_gravity="center_vertical">
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/newCasesIncrement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="96"
+                            android:textSize="15pt"
+                            android:textColor="#FF0000"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:layout_marginLeft="30dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/deaths"
+                        android:layout_marginTop="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/deaths"
+                        android:textColor="#000000"
+                        android:textSize="7pt"/>
+                    <TextView
+                        android:id="@+id/DeathsNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/deathsNum"
+                        android:textSize="20pt"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/up3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/up_arrow1"
+                            android:layout_gravity="center_vertical">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/deathsNumIncrement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="10"
+                            android:textSize="15pt"
+                            android:textColor="#FF0000"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/hospitalized"
+                        android:layout_marginTop="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/hospitalized"
+                        android:textColor="#000000"
+                        android:textSize="7pt"/>
+                    <TextView
+                        android:id="@+id/hospitalizedNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="756"
+                        android:textSize="20pt"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/up4"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/up_arrow1"
+                            android:layout_gravity="center_vertical">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/hospitalizedNumIncrement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="57"
+                            android:textSize="15pt"
+                            android:textColor="#FF0000"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:layout_marginLeft="30dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ICU"
+                        android:layout_marginTop="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/ICU"
+                        android:textColor="#000000"
+                        android:textSize="7pt"/>
+                    <TextView
+                        android:id="@+id/ICUNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="38"
+                        android:textSize="20pt"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/up5"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/up_arrow1"
+                            android:layout_gravity="center_vertical">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/ICUNumIncrement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="6"
+                            android:textSize="15pt"
+                            android:textColor="#FF0000"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </GridLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="OnClickRegionalData"
+                    android:text="@string/test_regional_data" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onDataClick"
+                    android:text="@string/dataButton" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+<!--            LinearLayout for Testing.-->
+<!--            Please use this space to avoid conflict if you want to make something in the main page-->
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
