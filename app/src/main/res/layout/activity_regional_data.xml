@@ -2,45 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/regional_data_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/regional_data_layout"
     tools:context=".RegionalDataActivity">
 
     <SearchView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <com.esri.arcgisruntime.mapping.view.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"></com.esri.arcgisruntime.mapping.view.MapView>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:src="@drawable/map_placeholder" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/region1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Van. Coastal" />
+        <Button
+            android:id="@+id/region1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Van. Coastal" />
 
-    <Button
-        android:id="@+id/region2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fraser Valley" />
+        <Button
+            android:id="@+id/region2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Fraser Valley" />
 
-    <Button
-        android:id="@+id/region3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Interior" />
+        <Button
+            android:id="@+id/region3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Interior" />
 
-    <Button
-        android:id="@+id/region4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Out of Canada" />
+        <Button
+            android:id="@+id/region4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Out of Canada" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
