@@ -1,22 +1,22 @@
 <resources>
     <!--    Lucas uses   -->
     <string name="app_name">COVIDCaster</string>
-
     <string name="app_main">British Columbia COVID-19</string>
     <string name="board">LIVE BOARD</string>
     <string name="lastUpdate">Last Update: </string>
-    <string name="tempUpdateDate">Nov. 05, 10:00, 2020</string>
     <!--     <string name="totalCases">Total Cases</string> -->
-    <string name="totalCasesNum">9,739</string>
-
+    <string name="emptyNum"> - </string>
     <string name="activeCases">Active Cases</string>
     <string name="deaths">Deaths</string>
-    <string name="activeCasesNum">1236</string>
-    <string name="deathsNum">233</string>
-
     <string name="ICU">ICU</string>
-    <string name="hospitalized">hospitalized</string>
+    <string name="currentHosp">Currently Hospitalized</string>
+    <string name="totalHosp">Total:</string>
+    <string name="everICU">Total:</string>
+    <string name="currentICU">Current ICU</string>
+    <string name="relatedNews">Related News</string>
+    <string name="cbc_url">https://www.cbc.ca/news/covid-19</string>
 
+    currentICU
 
     <!--    Lucas uses   -->
 
