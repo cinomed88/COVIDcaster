@@ -16,7 +16,23 @@
     <string name="relatedNews">Related News</string>
     <string name="cbc_url">https://www.cbc.ca/news/covid-19</string>
 
-    currentICU
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Regional Data</string>
+    <string name="nav_graph">Trend</string>
+    <string name="nav_news">Related News</string>
+
+    <!--    temp-->
+    <string name="inbox">Inbox</string>
+    <string name="drafts">Drafts</string>
+    <string name="sent_items">Sent Items</string>
+    <string name="trash">Trash</string>
+    <string name="help">Help</string>
+    <!-- menu items -->
+    <string name="nav_support">Support</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_feedback">Give us feedback</string>
+    <string name="nav_open_drawer">Open Navigation drawer</string>
+    <string name="nav_close_drawer">Close navigation drawer</string>
 
     <!--    Lucas uses   -->
 
@@ -47,5 +63,6 @@
     <!-- Lambert uses -->
 
     <string name="test_regional_data">Regional Data</string>
+    <string name="textview">TextView</string>
 
 </resources>

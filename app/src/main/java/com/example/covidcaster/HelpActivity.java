@@ -1,5 +1,9 @@
 package com.example.covidcaster;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,26 +11,19 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.TextView;
-
 import com.google.android.material.navigation.NavigationView;
 
-public class GraphActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graph);
+        setContentView(R.layout.activity_help);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_graph);
+        Toolbar toolbar = findViewById(R.id.toolbar_help);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_graph);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_help);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
                 drawer,
@@ -36,12 +33,9 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view_graph);
+        NavigationView navigationView = findViewById(R.id.nav_view_help);
         navigationView.setNavigationItemSelectedListener(this);
 
-        String statisticName = getIntent().getExtras().getString("statisticName");
-        TextView statName = findViewById(R.id.statisticCategory);
-        statName.setText(statisticName);
     }
 
     @Override
@@ -59,15 +53,15 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
             case R.id.nav_news:
                 intent = new Intent(this, NewsActivity.class);
                 break;
-            case R.id.nav_help:
-                intent = new Intent(this, HelpActivity.class);
+            case R.id.nav_home:
+                intent = new Intent(this, MainActivity.class);
                 break;
             default:
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, HelpActivity.class);
         }
         startActivity(intent);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_graph);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_help);
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
@@ -75,7 +69,7 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_graph);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout_help);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

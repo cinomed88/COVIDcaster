@@ -1,59 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/regional_data_layout"
+    android:id="@+id/drawer_layout_map"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".RegionalDataActivity">
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <com.esri.arcgisruntime.mapping.view.MapView
-        android:id="@+id/mapView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="5"></com.esri.arcgisruntime.mapping.view.MapView>
-
     <LinearLayout
+        android:id="@+id/regional_data_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/region1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Van. Coastal" />
+        <include
+            layout="@layout/toolbar_main"
+            android:id="@+id/toolbar_map"/>
 
-        <Button
-            android:id="@+id/region2"
+        <SearchView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Fraser Valley" />
+            android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/region3"
+        <com.esri.arcgisruntime.mapping.view.MapView
+            android:id="@+id/mapView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Interior" />
+            android:layout_weight="5"></com.esri.arcgisruntime.mapping.view.MapView>
 
-        <Button
-            android:id="@+id/region4"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Out of Canada" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/region1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Van. Coastal" />
+
+            <Button
+                android:id="@+id/region2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fraser Valley" />
+
+            <Button
+                android:id="@+id/region3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Interior" />
+
+            <Button
+                android:id="@+id/region4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Out of Canada" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_map"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu_nav" />
 
-
-</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
