@@ -82,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void onDataClick(View v) {
         Intent intent = new Intent(MainActivity.this, DataActivity.class);
+        String totalCases = tvTotal.getText().toString();
+        String activeCases = tvActive.getText().toString();
+        String deaths = tvDeaths.getText().toString();
+        intent.putExtra("totalCases",totalCases);
+        intent.putExtra("activeCases", activeCases);
+        intent.putExtra("deaths", deaths);
         startActivity(intent);
     }
 

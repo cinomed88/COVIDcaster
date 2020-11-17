@@ -91,18 +91,10 @@
         android:textAlignment="center"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="400dp"
-        android:layout_height="374dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:background="@color/buttonColor"
-        android:paddingTop="10dp"
-        android:text="Placeholder for Graph"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        tools:paddingTop="160dp" />
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
