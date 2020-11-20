@@ -19,6 +19,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".NewsActivity"></activity>
         <activity android:name=".RegionalDataActivity" />
+        <activity android:name=".HelpActivity" />
         <activity android:name=".GraphActivity" />
         <activity
             android:name=".DataActivity"
