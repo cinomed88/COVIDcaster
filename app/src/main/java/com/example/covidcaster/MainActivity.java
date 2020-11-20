@@ -214,12 +214,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_graph:
                 intent = new Intent(this, DataActivity.class);
-                String totalCases = tvTotal.getText().toString();
-                String activeCases = tvActive.getText().toString();
-                String deaths = tvDeaths.getText().toString();
-                intent.putExtra("totalCases",totalCases);
-                intent.putExtra("activeCases", activeCases);
-                intent.putExtra("deaths", deaths);
                 break;
             case R.id.nav_news:
                 intent = new Intent(this, NewsActivity.class);
