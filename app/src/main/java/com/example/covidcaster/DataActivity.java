@@ -93,6 +93,9 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 intent = new Intent(this, MainActivity.class);
                 break;
+            case R.id.nav_cc:
+                intent = new Intent(this, CollectionCentreActivity.class);
+                break;
             case R.id.nav_news:
                 intent = new Intent(this, NewsActivity.class);
                 break;

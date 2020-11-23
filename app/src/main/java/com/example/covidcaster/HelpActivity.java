@@ -50,6 +50,9 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_graph:
                 intent = new Intent(this, DataActivity.class);
                 break;
+            case R.id.nav_cc:
+                intent = new Intent(this, CollectionCentreActivity.class);
+                break;
             case R.id.nav_news:
                 intent = new Intent(this, NewsActivity.class);
                 break;

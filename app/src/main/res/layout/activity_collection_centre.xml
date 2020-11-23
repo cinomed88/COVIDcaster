@@ -5,10 +5,9 @@
     android:id="@+id/drawer_layout_map"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegionalDataActivity">
+    tools:context=".CollectionCentreActivity">
 
     <LinearLayout
-        android:id="@+id/regional_data_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -18,7 +17,7 @@
             layout="@layout/toolbar_main" />
 
         <com.esri.arcgisruntime.mapping.view.MapView
-            android:id="@+id/mapView"
+            android:id="@+id/ccmapView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"></com.esri.arcgisruntime.mapping.view.MapView>
@@ -41,7 +40,7 @@
                     android:text="@string/nameLabel" />
 
                 <TextView
-                    android:id="@+id/regional_detail_name_tv"
+                    android:id="@+id/cc_name_tv"
                     style="@style/mapValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -60,10 +59,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/totalLabel" />
+                    android:text="@string/regionLabel" />
 
                 <TextView
-                    android:id="@+id/regional_detail_total_tv"
+                    android:id="@+id/cc_health_authority_tv"
                     style="@style/mapValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -81,10 +80,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/activecasesLabel" />
+                    android:text="@string/addressLabel" />
 
                 <TextView
-                    android:id="@+id/regional_detail_active_tv"
+                    android:id="@+id/cc_address_tv"
                     style="@style/mapValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -102,10 +101,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/hospitalizedLabel" />
+                    android:text="@string/hoursLabel" />
 
                 <TextView
-                    android:id="@+id/regional_detail_hospitalized_tv"
+                    android:id="@+id/cc_hours_tv"
+                    style="@style/mapValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/mapLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/daysLabel" />
+
+                <TextView
+                    android:id="@+id/cc_days_tv"
                     style="@style/mapValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,10 +142,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/icuLabel" />
+                    android:text="@string/phoneLabel" />
 
                 <TextView
-                    android:id="@+id/regional_detail_icu_tv"
+                    android:id="@+id/cc_phone_tv"
                     style="@style/mapValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -144,16 +163,38 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/deathLabel" />
+                    android:text="@string/websiteLabel" />
 
                 <TextView
-                    android:id="@+id/regional_detail_death_tv"
+                    android:id="@+id/cc_website_tv"
+                    style="@style/mapValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:autoLink="web" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/mapLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/apptLabel" />
+
+                <TextView
+                    android:id="@+id/cc_appointment_tv"
                     style="@style/mapValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2" />
-
             </LinearLayout>
+
+
         </LinearLayout>
 
     </LinearLayout>

@@ -13,59 +13,35 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.components.Legend;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.Nullable;
-
-
-import android.app.DownloadManager;
-
-
-import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Locale;
-import java.util.Objects;
+
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.esri.arcgisruntime.mapping.ArcGISMap;
-import com.esri.arcgisruntime.mapping.view.MapView;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class GraphActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     float currentCount;
@@ -238,6 +214,9 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.nav_graph:
                 intent = new Intent(this, DataActivity.class);
+                break;
+            case R.id.nav_cc:
+                intent = new Intent(this, CollectionCentreActivity.class);
                 break;
             case R.id.nav_news:
                 intent = new Intent(this, NewsActivity.class);

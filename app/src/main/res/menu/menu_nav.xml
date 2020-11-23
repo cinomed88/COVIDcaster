@@ -11,6 +11,10 @@
             android:icon="@android:drawable/ic_dialog_map"
             android:title="@string/nav_map" />
         <item
+            android:id="@+id/nav_cc"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="@string/nav_cc" />
+        <item
             android:id="@+id/nav_graph"
             android:icon="@drawable/trend"
             android:title="@string/nav_graph" />

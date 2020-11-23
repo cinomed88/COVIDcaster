@@ -104,6 +104,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
+    public void OnClickCollectionCentre(View v) {
+        Intent intent = new Intent(MainActivity.this, CollectionCentreActivity.class);
+        startActivity(intent);
+    }
+
     public void onDataClick(View v) {
         Intent intent = new Intent(MainActivity.this, DataActivity.class);
         String totalCases = tvTotal.getText().toString();
@@ -195,8 +200,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
-
+                        Log.e("Error", error.toString());
                     }
                 });
 
@@ -211,6 +215,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch(id) {
             case R.id.nav_map:
                 intent = new Intent(this, RegionalDataActivity.class);
+                break;
+            case R.id.nav_cc:
+                intent = new Intent(this, CollectionCentreActivity.class);
                 break;
             case R.id.nav_graph:
                 intent = new Intent(this, DataActivity.class);
