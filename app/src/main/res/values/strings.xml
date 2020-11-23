@@ -42,22 +42,65 @@
     <string name="recoveredLabel">Recovered</string>
     <string name="deathsLabel">Deaths</string>
     <string name="dataButton">Data</string>
+    <string name="totalByMonth">Total Cases By Month</string>
     <string-array name="monthsList">
-        <item>April 2020</item>
+        <item>Apr 2020</item>
         <item>May 2020</item>
-        <item>June 2020</item>
-        <item>July 2020</item>
+        <item>Jun 2020</item>
+        <item>Jul 2020</item>
         <item>Aug 2020</item>
         <item>Sep 2020</item>
         <item>Oct 2020</item>
     </string-array>
     <string-array name="statisticsList">
-        <item>Active Cases</item>
-        <item>Hospitalized</item>
-        <item>ICU</item>
-        <item>Age</item>
-        <item>TAT</item>
+        <item>New Cases by Month</item>
+        <item>Total Cases by Age Group</item>
+        <item>Totals by Month</item>
+        <item>Gender</item>
     </string-array>
+
+    <string-array name="aprilDates">
+        <item>2020-04-01</item>
+        <item>2020-04-30</item>
+    </string-array>
+
+    <string-array name="mayDates">
+        <item>2020-05-01</item>
+        <item>2020-05-31</item>
+    </string-array>
+
+    <string-array name="juneDates">
+        <item>2020-06-01</item>
+        <item>2020-06-30</item>
+    </string-array>
+
+    <string-array name="julyDates">
+        <item>2020-07-01</item>
+        <item>2020-07-31</item>
+    </string-array>
+
+    <string-array name="augustDates">
+        <item>2020-08-01</item>
+        <item>2020-08-31</item>
+    </string-array>
+
+    <string-array name="sepDates">
+        <item>2020-09-01</item>
+        <item>2020-09-30</item>
+    </string-array>
+
+    <string-array name="octDates">
+        <item>2020-10-01</item>
+        <item>2020-10-31</item>
+    </string-array>
+
+    <string-array name="Totals">
+        <item>Total Cases by Month</item>
+        <item>Total Recovered by Month</item>
+        <item>Total Active by Month</item>
+        <item>Total Deaths by Month</item>
+    </string-array>
+
     <!--    Vlad Uses-->
 
     <!-- Lambert uses -->

@@ -17,9 +17,26 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.material.navigation.NavigationView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class DataActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    TextView tvTotal;
+    TextView tvDeaths;
+    TextView tvRecovered;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,22 +59,20 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         ListView statisticsList = findViewById(R.id.statisticsList);
-        TextView tvTotal = findViewById(R.id.numberOfCases);
-        TextView tvRecovered = findViewById(R.id.recoverNumber);
-        TextView tvDeaths = findViewById(R.id.deathNumber);
-//        String totalCases = getIntent().getExtras().getString("totalCases");
-//        String activeCases = getIntent().getExtras().getString("activeCases");
-//        String deaths = getIntent().getExtras().getString("deaths");
-//        if (totalCases != null && activeCases != null && deaths != null) {
-//            int recovered = Integer.parseInt(totalCases) - Integer.parseInt(activeCases);
-//            tvTotal.setText(totalCases);
-//            tvRecovered.setText(Integer.toString(recovered));
-//            tvDeaths.setText(deaths);
-//        }
+        tvTotal = findViewById(R.id.numberOfCases);
+        tvRecovered = findViewById(R.id.recoverNumber);
+        tvDeaths = findViewById(R.id.deathNumber);
+        Calendar cal = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CANADA);
+        String todayDate = dateFormat.format(cal.getTime());
+        cal.add(Calendar.DATE, -1);
+        String yesterdaysDate = dateFormat.format(cal.getTime());
+        getData(todayDate, yesterdaysDate);
         statisticsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String[] statistics = {"Active Cases", "Hospitalized", "ICU", "Age", "TAT", "Gender"};
+                String[] statistics = {"New Cases By Month", "Total Cases by Age Group",
+                        "Totals by Month", "Gender"};
                 Intent intent = new Intent(DataActivity.this, GraphActivity.class);
                 intent.putExtra("statisticName", statistics[i]);
                 startActivity(intent);
@@ -103,5 +118,47 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void getData(String today, String yesterday) {
+        String URL = "https://services9.arcgis.com/pJENMVYPQqZZe20v/arcgis/rest/services/" +
+                "province_daily_totals/FeatureServer/0/query?where=Abbreviation%20%3D%20'BC" +
+                "'%20AND%20SummaryDate%20%3E%3D%20TIMESTAMP%20'"+ yesterday +"%2000%3A00%3A00" +
+                "'%20AND%20SummaryDate%20%3C%3D%20TIMESTAMP%20'"+ today +"%2000%3A00%3A00'" +
+                "&outFields=TotalRecovered,TotalCases,TotalDeaths&outSR=4326&f=json";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            int totalCases = 0;
+                            int totalDeaths = 0;
+                            int totalRecovered = 0;
+                            JSONArray features =(JSONArray) response.get("features");
+                            JSONObject attributesObj = (JSONObject) features.get(0);
+                            JSONObject attributes = (JSONObject) attributesObj.get("attributes");
+                            int deaths = (Integer) attributes.get("TotalDeaths");
+                            int recovered = (Integer) attributes.get("TotalRecovered");
+                            int cases = (Integer) attributes.get("TotalCases");
+                            totalCases += cases;
+                            totalDeaths += deaths;
+                            totalRecovered += recovered;
+                            tvTotal.setText(Integer.toString(totalCases));
+                            tvRecovered.setText(Integer.toString(totalRecovered));
+                            tvDeaths.setText(Integer.toString(totalDeaths));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
     }
 }

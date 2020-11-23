@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgroundColor"
         android:orientation="vertical"
         tools:context=".Data"
         tools:layout_gravity="center">
@@ -24,8 +23,7 @@
             style="@style/titleText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/buttonColor"
-            android:entries="@array/monthsList" />
+            />
 
         <TextView
             android:id="@+id/totalCasesLabel"
@@ -44,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/numberOfCases"
-            android:textColor="@color/whiteColor" />
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/numberOfCases" />
+                android:text="" />
 
             <TextView
                 android:id="@+id/deathNumber"
@@ -87,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/numberOfCases" />
+                android:text="" />
         </LinearLayout>
 
         <TextView

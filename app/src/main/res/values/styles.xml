@@ -19,14 +19,12 @@
     <style name="RecoveredAndDeathLabels">
         <item name="android:paddingTop">20dp</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/textColor</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
 
     <style name="recoveredAndDeathsNumbers">
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/whiteColor</item>
         <item name="android:textStyle">bold</item>
     </style>
 
