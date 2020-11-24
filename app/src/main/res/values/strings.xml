@@ -20,19 +20,25 @@
     <string name="nav_map">Regional Data</string>
     <string name="nav_graph">Trend</string>
     <string name="nav_news">Related News</string>
-
-    <!--    temp-->
-    <string name="inbox">Inbox</string>
-    <string name="drafts">Drafts</string>
-    <string name="sent_items">Sent Items</string>
-    <string name="trash">Trash</string>
-    <string name="help">Help</string>
+<!--    <string name="help">Help</string>-->
     <!-- menu items -->
     <string name="nav_support">Support</string>
-    <string name="nav_help">Help</string>
+    <string name="nav_help">Contact Us</string>
     <string name="nav_feedback">Give us feedback</string>
     <string name="nav_open_drawer">Open Navigation drawer</string>
     <string name="nav_close_drawer">Close navigation drawer</string>
+    <string name="contactUs">Contact Us</string>
+    <!-- email -->
+    <string name="profile1">Lambert Chan</string>
+    <string name="profile2">Vladimir Kubliy</string>
+    <string name="profile3">Lucas Gong</string>
+    <string name="email1"><u>lambert.lh.chan@gmail.com</u></string>
+    <string name="email2"><u>kubliyvlad@gmail.com</u></string>
+    <string name="email3"><u>lucas.w.gong@gmail.com</u></string>
+    <string name="position1">Developer</string>
+    <string name="position2">Developer &amp; UI Designer</string>
+
+    <string name="contactUsDescription">Email us with any questions or feedback. We would be happy to answer your questions. Thank you!</string>
 
     <!--    Lucas uses   -->
 

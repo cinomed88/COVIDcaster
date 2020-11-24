@@ -64,9 +64,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Create the toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Create the drawer
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -77,11 +79,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        // Set Navigation Listener
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        //Don't allow landscape screen
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         tvUpdateTime = findViewById(R.id.updateTime);
         tvTotal = findViewById(R.id.totalCasesNum);
@@ -91,9 +91,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tvCurrentHosp = findViewById(R.id.currentHospNum);
         tvHospitalized = findViewById(R.id.hospitalizedNum);
         tvCurrentlyICU = findViewById(R.id.currentICUNum);
-
-
-//        tvRecovered = findViewById(R.id.deathsNumIncrement);
 
         getData();
 
@@ -120,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
-
+    // Get JSON data and parse them
     public void getData() {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
