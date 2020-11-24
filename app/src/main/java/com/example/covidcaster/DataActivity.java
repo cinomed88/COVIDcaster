@@ -1,6 +1,7 @@
 package com.example.covidcaster;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -27,16 +30,22 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class DataActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     TextView tvTotal;
     TextView tvDeaths;
     TextView tvRecovered;
+    RecyclerView rv;
+    List<String> graphNames;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +67,7 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view_data);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ListView statisticsList = findViewById(R.id.statisticsList);
+
         tvTotal = findViewById(R.id.numberOfCases);
         tvRecovered = findViewById(R.id.recoverNumber);
         tvDeaths = findViewById(R.id.deathNumber);
@@ -68,17 +77,15 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
         cal.add(Calendar.DATE, -1);
         String yesterdaysDate = dateFormat.format(cal.getTime());
         getData(todayDate, yesterdaysDate);
-        statisticsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String[] statistics = {"New Cases By Month", "Total Cases by Age Group",
-                        "Totals by Month", "Gender"};
-                Intent intent = new Intent(DataActivity.this, GraphActivity.class);
-                intent.putExtra("statisticName", statistics[i]);
-                startActivity(intent);
-            }
-        });
-
+        rv = findViewById(R.id.graphNamesCards);
+        GridLayoutManager glm = new GridLayoutManager(getBaseContext(), 2);
+        rv.setLayoutManager(glm);
+        Resources res = getResources();
+        String[] graphs = res.getStringArray(R.array.statisticsList);
+        graphNames = new ArrayList<>();
+        graphNames.addAll(Arrays.asList(graphs));
+        GraphNameView adapter = new GraphNameView(graphNames);
+        rv.setAdapter(adapter);
     }
 
     @Override

@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
@@ -138,14 +140,11 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                 }
             });
         }
-        if (statisticName != null && statisticName.equals("Gender")) {
+        if (statisticName != null && statisticName.equals("Cases by Gender")) {
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                     R.array.monthsList, android.R.layout.simple_spinner_item);
             spinner.setAdapter(adapter);
-            StringBuilder sb = new StringBuilder();
-            sb.append("Cases by gender ");
-            sb.append(currentMonth);
-//          statName.setText(sb.toString());
+
 
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -181,10 +180,6 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                 @Override
                 public void onNothingSelected(AdapterView<?> parentView) {
                     currentMonth = "Apr 2020";
-                    StringBuilder sb = new StringBuilder();
-                    sb.append("Cases by gender ");
-                    sb.append(currentMonth);
-                    //              statName.setText(sb.toString());
                     getMaleData("2020-04-01", "2020-04-30");
                 }
             });
@@ -292,9 +287,12 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                         maleEntries.add(new BarEntry(1, femaleCases));
                         BarDataSet set = new BarDataSet(femaleEntries, "Female");
                         BarDataSet set1 = new BarDataSet(maleEntries, "Male");
+                        int[] colors = {Color.RED, Color.BLUE};
+                        set1.setColors(colors);
                         List<IBarDataSet> dataSets = new ArrayList<>();
                         dataSets.add(set);
                         dataSets.add(set1);
+
                         BarData data = new BarData(dataSets);
                         data.setBarWidth(0.9f);
                         barChart.setData(data);
@@ -305,7 +303,7 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                         l.setTextSize(12f);
                         barChart.getAxisLeft().setDrawGridLines(false);
                         barChart.getXAxis().setDrawGridLines(false);
-                        barChart.getXAxis().setTextSize(15f);
+                        barChart.getXAxis().setTextSize(0f);
                         barChart.getAxisLeft().setTextSize(15f);
                         barChart.getAxisRight().setTextSize(15f);
                         barChart.getBarData().setValueTextSize(15f);
@@ -526,7 +524,7 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                         julyEntries.add(new BarEntry(3, julyTotalCases));
                         augustEntries.add(new BarEntry(4, augustTotalCases));
                         septEntries.add(new BarEntry(5, septTotalCases));
-                        septEntries.add(new BarEntry(6, octTotalCases));
+                        octEntries.add(new BarEntry(6, octTotalCases));
                         BarDataSet set = new BarDataSet(aprilEntries, "April");
                         BarDataSet set1 = new BarDataSet(mayEntries, "May");
                         BarDataSet set2 = new BarDataSet(juneEntries, "June");
@@ -552,7 +550,7 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                         l.setTextSize(12f);
                         barChart.getAxisLeft().setDrawGridLines(false);
                         barChart.getXAxis().setDrawGridLines(false);
-                        barChart.getXAxis().setTextSize(15f);
+                        barChart.getXAxis().setTextSize(0f);
                         barChart.getAxisLeft().setTextSize(15f);
                         barChart.getAxisRight().setTextSize(15f);
                         barChart.getBarData().setValueTextSize(15f);
@@ -1080,10 +1078,10 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                         barChart.setFitBars(true);
                         barChart.invalidate();
                         Legend l = barChart.getLegend();
-                        l.setTextSize(12f);
+                        l.setTextSize(10f);
                         barChart.getAxisLeft().setDrawGridLines(false);
                         barChart.getXAxis().setDrawGridLines(false);
-                        barChart.getXAxis().setTextSize(15f);
+                        barChart.getXAxis().setTextSize(0f);
                         barChart.getAxisLeft().setTextSize(15f);
                         barChart.getAxisRight().setTextSize(15f);
                         barChart.getBarData().setValueTextSize(15f);

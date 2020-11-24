@@ -45,7 +45,7 @@
         <item>New Cases by Month</item>
         <item>Total Cases by Age Group</item>
         <item>Totals by Month</item>
-        <item>Gender</item>
+        <item>Cases by Gender</item>
     </string-array>
 
     <string-array name="aprilDates">
