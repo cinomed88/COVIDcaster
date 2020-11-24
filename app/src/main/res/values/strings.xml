@@ -8,39 +8,23 @@
     <string name="emptyNum"> - </string>
     <string name="activeCases">Active Cases</string>
     <string name="deaths">Deaths</string>
-    <string name="ICU">ICU</string>
     <string name="currentHosp">Currently Hospitalized</string>
     <string name="totalHosp">Total:</string>
-    <string name="everICU">Total:</string>
     <string name="currentICU">Current ICU</string>
     <string name="relatedNews">Related News</string>
     <string name="cbc_url">https://www.cbc.ca/news/covid-19</string>
 
     <string name="nav_home">Home</string>
     <string name="nav_map">Regional Data</string>
+    <string name="nav_cc">Find a Testing Centre</string>
     <string name="nav_graph">Trend</string>
     <string name="nav_news">Related News</string>
-<!--    <string name="help">Help</string>-->
+
     <!-- menu items -->
     <string name="nav_support">Support</string>
-    <string name="nav_help">Contact Us</string>
-    <string name="nav_feedback">Give us feedback</string>
+    <string name="nav_help">Help</string>
     <string name="nav_open_drawer">Open Navigation drawer</string>
     <string name="nav_close_drawer">Close navigation drawer</string>
-    <string name="contactUs">Contact Us</string>
-    <!-- email -->
-    <string name="profile1">Lambert Chan</string>
-    <string name="profile2">Vladimir Kubliy</string>
-    <string name="profile3">Lucas Gong</string>
-    <string name="email1"><u>lambert.lh.chan@gmail.com</u></string>
-    <string name="email2"><u>kubliyvlad@gmail.com</u></string>
-    <string name="email3"><u>lucas.w.gong@gmail.com</u></string>
-    <string name="position1">Developer</string>
-    <string name="position2">Developer &amp; UI Designer</string>
-
-    <string name="contactUsDescription">Email us with any questions or feedback. We would be happy to answer your questions. Thank you!</string>
-
-    <!--    Lucas uses   -->
 
     <!--    Vlad Uses-->
     <string name="totalCases">Total Cases</string>
@@ -49,26 +33,80 @@
     <string name="deathsLabel">Deaths</string>
     <string name="dataButton">Data</string>
     <string-array name="monthsList">
-        <item>April 2020</item>
+        <item>Apr 2020</item>
         <item>May 2020</item>
-        <item>June 2020</item>
-        <item>July 2020</item>
+        <item>Jun 2020</item>
+        <item>Jul 2020</item>
         <item>Aug 2020</item>
         <item>Sep 2020</item>
         <item>Oct 2020</item>
     </string-array>
     <string-array name="statisticsList">
-        <item>Active Cases</item>
-        <item>Hospitalized</item>
-        <item>ICU</item>
-        <item>Age</item>
-        <item>TAT</item>
+        <item>New Cases by Month</item>
+        <item>Total Cases by Age Group</item>
+        <item>Totals by Month</item>
+        <item>Cases by Gender</item>
     </string-array>
-    <!--    Vlad Uses-->
+
+    <string-array name="aprilDates">
+        <item>2020-04-01</item>
+        <item>2020-04-30</item>
+    </string-array>
+
+    <string-array name="mayDates">
+        <item>2020-05-01</item>
+        <item>2020-05-31</item>
+    </string-array>
+
+    <string-array name="juneDates">
+        <item>2020-06-01</item>
+        <item>2020-06-30</item>
+    </string-array>
+
+    <string-array name="julyDates">
+        <item>2020-07-01</item>
+        <item>2020-07-31</item>
+    </string-array>
+
+    <string-array name="augustDates">
+        <item>2020-08-01</item>
+        <item>2020-08-31</item>
+    </string-array>
+
+    <string-array name="sepDates">
+        <item>2020-09-01</item>
+        <item>2020-09-30</item>
+    </string-array>
+
+    <string-array name="octDates">
+        <item>2020-10-01</item>
+        <item>2020-10-31</item>
+    </string-array>
+
+    <string-array name="Totals">
+        <item>Total Cases by Month</item>
+        <item>Total Recovered by Month</item>
+        <item>Total Active by Month</item>
+        <item>Total Deaths by Month</item>
+    </string-array>
 
     <!-- Lambert uses -->
 
-    <string name="test_regional_data">Regional Data</string>
+    <string name="regionalMapPrompt">Please select a region.</string>
+    <string name="ccMapPrompt">Please select a collection centre.</string>
     <string name="textview">TextView</string>
+    <string name="regionLabel">Region:</string>
+    <string name="nameLabel">Name: </string>
+    <string name="addressLabel">Address:</string>
+    <string name="hoursLabel">Hours:</string>
+    <string name="daysLabel">Days:</string>
+    <string name="phoneLabel">Phone:</string>
+    <string name="websiteLabel">Link:</string>
+    <string name="apptLabel">Appointment Required:</string>
+    <string name="totalLabel">Total:</string>
+    <string name="activecasesLabel">Active Cases:</string>
+    <string name="hospitalizedLabel">Hospitalized</string>
+    <string name="icuLabel">In ICU:</string>
+    <string name="deathLabel">Deaths:</string>
 
 </resources>

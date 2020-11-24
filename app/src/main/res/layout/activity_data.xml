@@ -10,22 +10,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgroundColor"
         android:orientation="vertical"
         tools:context=".Data">
 
         <include
             layout="@layout/toolbar_main"
             android:id="@+id/toolbar_data"/>
-
-        <Spinner
-            android:id="@+id/spinner"
-            style="@style/titleText"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/buttonColor"
-            android:entries="@array/monthsList"
-            />
 
         <TextView
             android:id="@+id/totalCasesLabel"
@@ -44,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/numberOfCases"
-            android:textColor="@color/whiteColor" />
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,14 +81,10 @@
                 android:text="@string/numberOfCases" />
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/statisticsList"
-            style="@style/ListFont"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/graphNamesCards"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/buttonColor"
-            android:entries="@array/statisticsList" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView

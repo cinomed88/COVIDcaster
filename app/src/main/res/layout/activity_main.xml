@@ -386,7 +386,44 @@
                                 android:textSize="15pt"
                                 android:textColor="@color/whiteColor"
                                 android:background="#66000000"
-                                android:text="@string/test_regional_data" />
+                                android:text="@string/nav_map" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="20dp"
+                    android:layout_margin="10dp"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="OnClickCollectionCentre">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="109dp"
+                            android:src="@drawable/collection_centre"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:textSize="15pt"
+                                android:textColor="@color/whiteColor"
+                                android:background="#66000000"
+                                android:text="@string/nav_cc" />
                         </LinearLayout>
                     </FrameLayout>
                 </androidx.cardview.widget.CardView>

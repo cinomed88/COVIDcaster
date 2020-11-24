@@ -1,7 +1,6 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -19,15 +18,26 @@
     <style name="RecoveredAndDeathLabels">
         <item name="android:paddingTop">20dp</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/textColor</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
 
     <style name="recoveredAndDeathsNumbers">
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/whiteColor</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="mapLabel">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="mapValue">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:gravity">left</item>
     </style>
 
 </resources>

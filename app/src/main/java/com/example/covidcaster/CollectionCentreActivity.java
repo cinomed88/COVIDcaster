@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -32,32 +33,36 @@ import com.esri.arcgisruntime.portal.Portal;
 import com.esri.arcgisruntime.portal.PortalItem;
 import com.google.android.material.navigation.NavigationView;
 
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 
-public class RegionalDataActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class CollectionCentreActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private static final String sTag = "Gesture";
     private MapView mMapView;
     private FeatureLayer mFeatureLayer;
-    String layerID = "f7d1318260b14ac2b334e81e55ee5c9e";
+    String layerID = "125d693c953a483ba82c637166f201cb";
     Portal portal = new Portal("https://bcgov03.maps.arcgis.com", false);
     final PortalItem portalItem = new PortalItem(portal, layerID);
 
-    TextView detailtv;
-    TextView totaltv;
-    TextView activetv;
-    TextView hospitalizedtv;
-    TextView icutv;
-    TextView deathtv;
-
+    TextView ccRegiontv;
+    TextView ccNametv;
+    TextView ccAddresstv;
+    TextView ccHourstv;
+    TextView ccDaystv;
+    TextView ccSpecialtv;
+    TextView ccPhonetv;
+    TextView ccWebsitetv;
+    TextView ccAppttv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_regional_data);
+        setContentView(R.layout.activity_collection_centre);
 
         Toolbar toolbar = findViewById(R.id.toolbar_map);
         setSupportActionBar(toolbar);
@@ -75,16 +80,17 @@ public class RegionalDataActivity extends AppCompatActivity implements Navigatio
         NavigationView navigationView = findViewById(R.id.nav_view_map);
         navigationView.setNavigationItemSelectedListener(this);
 
-        mMapView = findViewById(R.id.mapView);
+        mMapView = findViewById(R.id.ccmapView);
         setupMap();
 
-        detailtv = findViewById(R.id.regional_detail_name_tv);
-        detailtv.setText(R.string.regionalMapPrompt);
-        totaltv = findViewById(R.id.regional_detail_total_tv);
-        activetv = findViewById(R.id.regional_detail_active_tv);
-        hospitalizedtv = findViewById(R.id.regional_detail_hospitalized_tv);
-        icutv = findViewById(R.id.regional_detail_icu_tv);
-        deathtv = findViewById(R.id.regional_detail_death_tv);
+        ccRegiontv = findViewById(R.id.cc_health_authority_tv);
+        ccNametv = findViewById(R.id.cc_name_tv);
+        ccAddresstv = findViewById(R.id.cc_address_tv);
+        ccHourstv = findViewById(R.id.cc_hours_tv);
+        ccDaystv = findViewById(R.id.cc_days_tv);
+        ccPhonetv = findViewById(R.id.cc_phone_tv);
+        ccWebsitetv = findViewById(R.id.cc_website_tv);
+        ccAppttv = findViewById(R.id.cc_appointment_tv);
 
         mMapView.setOnTouchListener(new DefaultMapViewOnTouchListener(this, mMapView) {
 
@@ -114,20 +120,26 @@ public class RegionalDataActivity extends AppCompatActivity implements Navigatio
                                     if (featureLayer != null) {
                                         featureLayer.clearSelection();
                                         featureLayer.selectFeature(identifiedFeature);
-                                        Map<String, Object> regionalAttributes = identifiedFeature.getAttributes();
-                                        String name = (String) regionalAttributes.get("HA_Name");
-                                        int activeCases = (int) regionalAttributes.get("ActiveCases");
-                                        int totalCases = (int) regionalAttributes.get("Cases");
-                                        int hospitalizedCases = (int) regionalAttributes.get("CurrentlyHosp");
-                                        int icuCases = (int) regionalAttributes.get("CurrentlyICU");
-                                        int deathCases = (int) regionalAttributes.get("Deaths");
 
-                                        detailtv.setText(name);
-                                        totaltv.setText(Integer.toString(totalCases));
-                                        activetv.setText(Integer.toString(activeCases));
-                                        hospitalizedtv.setText(Integer.toString(hospitalizedCases));
-                                        icutv.setText(Integer.toString(icuCases));
-                                        deathtv.setText(Integer.toString(deathCases));
+                                        Map<String, Object> ccAttributes = identifiedFeature.getAttributes();
+                                        String ha = (String) ccAttributes.get("Health_Authority");
+                                        String name = (String) ccAttributes.get("Community_Collection_Center_Nam");
+                                        String address = (String) ccAttributes.get("Address");
+                                        String hours = (String) ccAttributes.get("Monday_Hours");
+                                        String days = (String) ccAttributes.get("Days");
+                                        String phone = (String) ccAttributes.get("Phone");
+                                        String website = (String) ccAttributes.get("Website");
+                                        String appt = (String) ccAttributes.get("Referral_Required");
+
+                                        ccRegiontv.setText(ha);
+                                        ccNametv.setText(name);
+                                        ccAddresstv.setText(address);
+                                        ccHourstv.setText(hours);
+                                        ccDaystv.setText(days);
+                                        ccPhonetv.setText(phone == null ? phone : "Not available");
+                                        ccWebsitetv.setText(website);
+                                        ccWebsitetv.setMovementMethod(LinkMovementMethod.getInstance());
+                                        ccAppttv.setText(appt);
                                     }
                                 }
                             }
@@ -204,8 +216,8 @@ public class RegionalDataActivity extends AppCompatActivity implements Navigatio
             case R.id.nav_home:
                 intent = new Intent(this, MainActivity.class);
                 break;
-            case R.id.nav_cc:
-                intent = new Intent(this, CollectionCentreActivity.class);
+            case R.id.nav_map:
+                intent = new Intent(this, RegionalDataActivity.class);
                 break;
             case R.id.nav_graph:
                 intent = new Intent(this, DataActivity.class);
@@ -217,7 +229,7 @@ public class RegionalDataActivity extends AppCompatActivity implements Navigatio
                 intent = new Intent(this, HelpActivity.class);
                 break;
             default:
-                intent = new Intent(this, RegionalDataActivity.class);
+                intent = new Intent(this, CollectionCentreActivity.class);
         }
         startActivity(intent);
 

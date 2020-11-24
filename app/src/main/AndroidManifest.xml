@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".NewsActivity"></activity>
+        <activity android:name=".CollectionCentreActivity"></activity>
+        <activity android:name=".NewsActivity" />
         <activity android:name=".RegionalDataActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".GraphActivity" />
