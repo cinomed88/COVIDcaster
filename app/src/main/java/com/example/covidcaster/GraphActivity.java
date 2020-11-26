@@ -184,7 +184,7 @@ public class GraphActivity extends AppCompatActivity implements NavigationView.O
                 }
             });
         }
-        if (statisticName != null && statisticName.equals("New Cases By Month")) {
+        if (statisticName != null && statisticName.equals("New Cases by Month")) {
             getAprilData();
         }
         if (statisticName != null && statisticName.equals("Total Cases by Age Group")) {
