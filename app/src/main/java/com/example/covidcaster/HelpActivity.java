@@ -3,6 +3,8 @@ package com.example.covidcaster;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,9 +22,11 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
+        // Create the toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_help);
         setSupportActionBar(toolbar);
 
+        // Create the drawer
         DrawerLayout drawer = findViewById(R.id.drawer_layout_help);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -33,8 +37,46 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        // Set Navigation Listener
         NavigationView navigationView = findViewById(R.id.nav_view_help);
         navigationView.setNavigationItemSelectedListener(this);
+
+        TextView tvEmail1 = (TextView) findViewById(R.id.email1);
+        TextView tvEmail2 = (TextView) findViewById(R.id.email2);
+        TextView tvEmail3 = (TextView) findViewById(R.id.email3);
+
+        // The functionality for sending an email to developers.
+        tvEmail1.setOnClickListener(new TextView.OnClickListener(){
+            public void onClick(View view){
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.setType("plain/text");
+                String address = tvEmail1.getText().toString();
+                email.putExtra(Intent.EXTRA_EMAIL, address);
+                email.putExtra(Intent.EXTRA_SUBJECT, "Feedback and Question about COVIDCaster");
+                startActivity(email);
+            }
+        });
+        tvEmail2.setOnClickListener(new TextView.OnClickListener(){
+            public void onClick(View view){
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.setType("plain/text");
+                String address = tvEmail2.getText().toString();
+                email.putExtra(Intent.EXTRA_EMAIL, address);
+                email.putExtra(Intent.EXTRA_SUBJECT, "Feedback and Question about COVIDCaster");
+                startActivity(email);
+            }
+        });
+        tvEmail3.setOnClickListener(new TextView.OnClickListener(){
+            public void onClick(View view){
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.setType("plain/text");
+                String address = tvEmail3.getText().toString();
+                email.putExtra(Intent.EXTRA_EMAIL, address);
+                email.putExtra(Intent.EXTRA_SUBJECT, "Feedback and Question about COVIDCaster");
+                startActivity(email);
+            }
+        });
+
 
     }
 

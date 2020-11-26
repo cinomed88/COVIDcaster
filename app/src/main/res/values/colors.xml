@@ -8,4 +8,6 @@
     <color name="whiteColor">#FFFFFF</color>
     <color name="buttonColor">#cfd8dc</color>
     <color name="headerColor">#788b91</color>
+    <color name="email">#7777FF</color>
+    <color name="black">#000000</color>
 </resources>

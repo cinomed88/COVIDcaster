@@ -13,25 +13,39 @@
     <string name="currentICU">Current ICU</string>
     <string name="relatedNews">Related News</string>
     <string name="cbc_url">https://www.cbc.ca/news/covid-19</string>
+    <string name="nav_feedback">Give us feedback</string>
 
     <string name="nav_home">Home</string>
     <string name="nav_map">Regional Data</string>
-    <string name="nav_cc">Find a Testing Centre</string>
+    <string name="nav_cc">Testing Centre</string>
     <string name="nav_graph">Trend</string>
     <string name="nav_news">Related News</string>
 
     <!-- menu items -->
     <string name="nav_support">Support</string>
-    <string name="nav_help">Help</string>
+    <string name="nav_help">Contact Us</string>
     <string name="nav_open_drawer">Open Navigation drawer</string>
     <string name="nav_close_drawer">Close navigation drawer</string>
+    <string name="contactUs">Contact Us</string>
+
+    <!-- email -->
+    <string name="profile1">Lambert Chan</string>
+    <string name="profile2">Vladimir Kubliy</string>
+    <string name="profile3">Lucas Gong</string>
+    <string name="email1"><u>lambert.lh.chan@gmail.com</u></string>
+    <string name="email2"><u>kubliyvlad@gmail.com</u></string>
+    <string name="email3"><u>lucas.w.gong@gmail.com</u></string>
+    <string name="position1">Developer</string>
+    <string name="position2">Developer &amp; UI Designer</string>
+
+    <string name="contactUsDescription">Email us with any questions or feedback. We would be happy to answer your questions. Thank you!</string>
 
     <!--    Vlad Uses-->
     <string name="totalCases">Total Cases</string>
     <string name="numberOfCases">123,456,789</string>
     <string name="recoveredLabel">Recovered</string>
     <string name="deathsLabel">Deaths</string>
-    <string name="dataButton">Data</string>
+    <string name="dataButton">Trend</string>
     <string-array name="monthsList">
         <item>Apr 2020</item>
         <item>May 2020</item>
