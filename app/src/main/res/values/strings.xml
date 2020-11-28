@@ -42,7 +42,7 @@
 
     <!--    Vlad Uses-->
     <string name="totalCases">Total Cases</string>
-    <string name="numberOfCases">123,456,789</string>
+    <string name="numberOfCases">-</string>
     <string name="recoveredLabel">Recovered</string>
     <string name="deathsLabel">Deaths</string>
     <string name="dataButton">Trend</string>

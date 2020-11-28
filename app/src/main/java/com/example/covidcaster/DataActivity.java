@@ -87,7 +87,7 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
         GraphNameView adapter = new GraphNameView(graphNames);
         rv.setAdapter(adapter);
     }
-
+    //Setup Navigation
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -130,6 +130,7 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    //get Data for display TextViews
     public void getData(String today, String yesterday) {
         String URL = "https://services9.arcgis.com/pJENMVYPQqZZe20v/arcgis/rest/services/" +
                 "province_daily_totals/FeatureServer/0/query?where=Abbreviation%20%3D%20'BC" +
@@ -159,13 +160,10 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
                     }
                 }, new Response.ErrorListener() {
-
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                     }
                 });
 
