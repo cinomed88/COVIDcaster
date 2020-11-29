@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TextView tvTotal;
     TextView tvNew;
     TextView tvActive;
-    TextView tvRecovered;
     TextView tvDeaths;
     TextView tvCurrentHosp;
     TextView tvHospitalized;
@@ -166,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 totalCurrentlyICU += currentlyICU;
 
                             }
-
+                            // calculate total numbers of the statistics
                             tvTotal.setText(Integer.toString(totalCases));
                             tvActive.setText(Integer.toString(totalActiveCases));
                             tvNew.setText(Integer.toString(totalNewCases));
@@ -174,8 +173,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             tvCurrentHosp.setText(Integer.toString(totalCurrentlyHosp));
                             tvHospitalized.setText(Integer.toString(totalHospitalized));
                             tvCurrentlyICU.setText(Integer.toString(totalCurrentlyICU));
-
-//                            tvRecovered.setText(Integer.toString(totalRecovered));
 
                             // get update time
                             JSONObject data = (JSONObject) features.get(0);
@@ -228,11 +225,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             default:
                 intent = new Intent(this, MainActivity.class);
         }
-        System.out.println("-------------------");
-        System.out.println(intent);
-        System.out.println("-------------------");
         startActivity(intent);
 
+        // Set the navigation drawer behavior
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
