@@ -54,7 +54,6 @@ public class CollectionCentreActivity extends AppCompatActivity implements Navig
     TextView ccAddresstv;
     TextView ccHourstv;
     TextView ccDaystv;
-    TextView ccSpecialtv;
     TextView ccPhonetv;
     TextView ccWebsitetv;
     TextView ccAppttv;
@@ -92,6 +91,12 @@ public class CollectionCentreActivity extends AppCompatActivity implements Navig
         ccWebsitetv = findViewById(R.id.cc_website_tv);
         ccAppttv = findViewById(R.id.cc_appointment_tv);
 
+        /**
+         * Sets on (single) touch listener for the collection centres. Highlights and centres the
+         * selected collection centre and displays the following attributes: Name, Address, Hours,
+         * Days open, Phone Number, Website and Appointment Only.
+         * The Website can be opened by the Phone's default internet browser.
+         */
         mMapView.setOnTouchListener(new DefaultMapViewOnTouchListener(this, mMapView) {
 
             @Override
@@ -157,7 +162,10 @@ public class CollectionCentreActivity extends AppCompatActivity implements Navig
         });
     }
 
-
+    /**
+     * Sets up the Arcgis map and sets the Collection Centre layer with all the centre attributes
+     * on top.
+     */
     private void setupMap() {
         if (mMapView != null) {
             String itemId = "eea6c3fb2b654bb6a4d935666a448bd1";

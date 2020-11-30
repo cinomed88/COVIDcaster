@@ -106,9 +106,11 @@
 
     <!-- Lambert uses -->
 
+    <!-- Prompts -->
     <string name="regionalMapPrompt">Please select a region.</string>
     <string name="ccMapPrompt">Please select a collection centre.</string>
-    <string name="textview">TextView</string>
+
+    <!-- Collection Centre Activity Labels -->
     <string name="regionLabel">Region:</string>
     <string name="nameLabel">Name: </string>
     <string name="addressLabel">Address:</string>
@@ -117,6 +119,8 @@
     <string name="phoneLabel">Phone:</string>
     <string name="websiteLabel">Link:</string>
     <string name="apptLabel">Appointment Required:</string>
+
+    <!-- Regional Data Activity Labels -->
     <string name="totalLabel">Total:</string>
     <string name="activecasesLabel">Active Cases:</string>
     <string name="hospitalizedLabel">Hospitalized</string>

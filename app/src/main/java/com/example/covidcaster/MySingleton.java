@@ -9,6 +9,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
+/***
+ * The Singleton class is a helper class to get data from the arcgis api.
+ */
 public class MySingleton {
     private static MySingleton instance;
     private RequestQueue requestQueue;

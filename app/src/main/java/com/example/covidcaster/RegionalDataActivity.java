@@ -36,14 +36,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
-
+/**
+ * Loads an Arcgis map layer and map feature layer for interaction to allow user to select region
+ * and read the data in that region.
+ */
 public class RegionalDataActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private static final String sTag = "Gesture";
     private MapView mMapView;
     private FeatureLayer mFeatureLayer;
-    String layerID = "f7d1318260b14ac2b334e81e55ee5c9e";
-    Portal portal = new Portal("https://bcgov03.maps.arcgis.com", false);
+    String layerID = "f7d1318260b14ac2b334e81e55ee5c9e"; //The layer id that show region (used) and Collection Centres (unused in this activity)
+    Portal portal = new Portal("https://bcgov03.maps.arcgis.com", false); //Opens up a portal to the BC Government map layer
     final PortalItem portalItem = new PortalItem(portal, layerID);
 
     TextView detailtv;
@@ -52,6 +55,7 @@ public class RegionalDataActivity extends AppCompatActivity implements Navigatio
     TextView hospitalizedtv;
     TextView icutv;
     TextView deathtv;
+
 
 
     @Override
@@ -86,6 +90,11 @@ public class RegionalDataActivity extends AppCompatActivity implements Navigatio
         icutv = findViewById(R.id.regional_detail_icu_tv);
         deathtv = findViewById(R.id.regional_detail_death_tv);
 
+        /**
+         * Sets an on (single) click listener that selects and highlights a regional data.
+         * It also shows the following regional attributes: Active Cases, Cases, Hospitalized, ICU,
+         * and Deaths.
+         */
         mMapView.setOnTouchListener(new DefaultMapViewOnTouchListener(this, mMapView) {
 
             @Override
@@ -145,7 +154,10 @@ public class RegionalDataActivity extends AppCompatActivity implements Navigatio
         });
     }
 
-
+    /**
+     * Sets up the base BC Regional Map with Collection centre and adds the Regional Covid Data
+     * layer on top.
+     */
     private void setupMap() {
         if (mMapView != null) {
             String itemId = "eea6c3fb2b654bb6a4d935666a448bd1";

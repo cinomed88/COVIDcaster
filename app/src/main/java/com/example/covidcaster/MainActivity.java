@@ -47,6 +47,9 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    // This the main url to arcgis api, the query includes an SQL statement
+    // Currently the SQL statement, is where=FID like HA_
+    // The latter half of the string is to not return unnecessary information like geographic points or map related data.
     String URL = "https://services1.arcgis.com/xeMpV7tU1t4KD3Ei/ArcGIS/rest/services/COVID19_Cases_by_BC_Health_Authority/FeatureServer/0/query?where=FID+%3C+7&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=false&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=false&quantizationParameters=&sqlFormat=none&f=pjson&token=";
 
     TextView tvUpdateTime;
@@ -126,6 +129,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
 
+                    /**
+                     * Gets the specific data from the arcgis JSON for use throughout the
+                     * application.
+                     * The keys used are: Total Cases, Total Active Cases, Total New Cases,
+                     * Total Deaths, Total Hospitalized, Total Currently Hospitalized and Currently
+                     * ICU. Recovered and Total ICU are currently unused.
+                     * @param response
+                     */
                     @Override
                     public void onResponse(JSONObject response) {
                         try {

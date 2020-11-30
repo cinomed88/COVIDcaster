@@ -4,7 +4,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="iconTint">@color/whiteColor</item>
     </style>
+
     <style name="titleText">
         <item name="android:textColor">@color/textColor</item>
     </style>
@@ -39,6 +42,10 @@
         <item name="android:paddingLeft">10dp</item>
         <item name="android:textSize">14dp</item>
         <item name="android:gravity">left</item>
+    </style>
+
+    <style name="regionalDataTable">
+        <item name="android:layout_margin">10dp</item>
     </style>
 
 </resources>
